@@ -15,7 +15,9 @@
     "migrate-test": "db-migrate --config=./config-test.js --env=connection up",
     "psql": "docker exec -it oauth2serverpg_postgres_1 psql -U postgres -d oauth2_server",
     "migrate": "db-migrate --config=./config-development.js --env=connection",
-    "release": "standard-version"
+    "release": "standard-version",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -46,7 +48,8 @@
     "pg": "^4.5.1",
     "request": "^2.69.0",
     "uuid": "^2.0.1",
-    "yargs": "^6.0.0"
+    "yargs": "^6.0.0",
+    "snyk": "^1.88.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -63,5 +66,6 @@
       "**/test/**",
       "node_modules"
     ]
-  }
+  },
+  "snyk": true
 }
